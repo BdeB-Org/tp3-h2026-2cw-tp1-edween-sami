@@ -52,3 +52,13 @@ h2{
     color: white;
 }
 
+main{
+
+
+    background-image:url(../images/fondFlou.png) ;
+
+    height: 1000px;
+    background-size: cover;
+    
+}
+
