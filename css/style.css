@@ -141,3 +141,61 @@ main{
     color: white;
 }
 
+#sectionInputClient{
+
+
+    height: 400px;
+
+    background-color: rgba(0, 0, 0,0.5);
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+#formClient{
+
+    background-color:rgba(117, 111, 111, 0.6);
+    height: 300px;
+    width: 1700px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.input{
+
+    width: 400px;
+    border-radius: 20px;
+    height: 50px;
+}
+
+#bSummit{
+
+    width: 300px;
+    border-radius: 20px;
+    height: 50px;
+    background-color: #225B85;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.divInput{
+margin-top: 30px;
+    display:flex ;
+    justify-content: space-around;
+}
+
+#divButton{
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+
+
