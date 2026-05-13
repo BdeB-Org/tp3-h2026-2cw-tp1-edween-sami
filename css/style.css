@@ -25,3 +25,30 @@ justify-content: space-between;
     display: flex;
     justify-content: space-between;
 }
+
+footer{
+
+    height: 200px;
+    background-color: #757572;
+    display: flex;
+    justify-content: space-around;
+}
+
+#photoFooter{
+
+    border-radius: 20px;
+    height: 150px;
+    width: 150px;
+}
+.divFooter{
+
+    margin-top: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+
+    color: white;
+}
+
