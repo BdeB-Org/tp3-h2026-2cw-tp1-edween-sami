@@ -34,18 +34,18 @@
 
            
 
-            <div id="formClient">
+            <div id="divFormClient">
 
-            <form>
+            <form id="formCommande">
 
                 <div class="divInput">
-                <input type="number" class="input" placeholder="ID Commande..">
-                <input type="date" class="input" >
+                <input type="number" class="input" id="idCommande" placeholder="ID Commande..">
+                <input type="date" id="dateCommande" class="input" >
                 </div>
 
                 <div class="divInput">
-                <input type="number" class="input" placeholder="Prix total..">
-                <input type="number" class="input" placeholder="ID Client..">
+                <input type="number" class="input" id="prixCommande" placeholder="Prix total..">
+                <input type="number" class="input" id="idClientCommande" placeholder="ID Client..">
                 </div>
 
                 <div id="divButton">
@@ -80,7 +80,9 @@
                                 <th>Prix total</th>
                                 <th>ID Client</th>
                                 
-                                <th></th>
+                                <th>
+                                    <button id="bActualiser">Actualiser</button>
+                                </th>
 
 
 

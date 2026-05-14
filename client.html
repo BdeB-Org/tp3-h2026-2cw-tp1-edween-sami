@@ -32,20 +32,20 @@
 
            
 
-            <div id="formClient">
+            <div id="divFormClient">
 
-            <form>
+            <form id="formClient">
 
                 <div class="divInput">
-                <input type="number" class="input" placeholder="ID Client..">
-                <input type="text" class="input" placeholder="Nom..">
-                <input  type="text" class="input"  placeholder="Prenom..">
+                <input type="number" class="input" id="idClient" placeholder="ID Client..">
+                <input type="text" class="input" id="nomClient" placeholder="Nom..">
+                <input  type="text" class="input" id="prenomClient"  placeholder="Prenom..">
                 </div>
 
                 <div class="divInput">
-                <input type="email" class="input" placeholder="Email..">
-                <input type="text" class="input" placeholder="Telephone..">
-                <input type="password" class="input" placeholder="Mot de passe..">
+                <input type="email" class="input" id="emailClient" placeholder="Email..">
+                <input type="text" class="input" id="telephoneClient" placeholder="Telephone..">
+                <input type="password" class="input" id="mdpClient" placeholder="Mot de passe..">
                 </div>
 
                 <div id="divButton">
@@ -81,9 +81,10 @@
                                 <th>Email</th>
                                 <th>Telephone</th>
                                 <th>MDP</th>
-                                <th></th>
 
-
+                                <th>
+                                    <button id="bActualiser">Actualiser</button>
+                                </th>
 
 
                             </tr>
