@@ -1,7 +1,7 @@
 const evenementsBody = document.getElementById("evenement-body");
-const evenementForm = document.getElementById("formEvenement");
+
 const reload = document.getElementById("bActualiserEvenement");
-const message = document.getElementById("message");
+
 
 async function chargerEvenements() {
 
@@ -18,11 +18,7 @@ async function chargerEvenements() {
                 <td>${evenement.sport}</td>
                 <td>${evenement.id_lieu}</td>
 
-                <td>
-                    <button class="bSupprimer" onclick="supprimerEvenement(${evenement.id_evenement})">
-                        Supprimer
-                    </button>
-                </td>
+               
             </tr>
 
         `).join('');

@@ -30,8 +30,9 @@
         </div>
 
 
-        <H1>RECHERCHER DES ÉVENEMENTS</H1>
-            <section id="sectionInputEvenement">
+        <h1>LISTE DES ÉVENEMENTS</h1>
+        <section id="container">
+            <div id="sectionInputEvenement">
 
            
 
@@ -45,12 +46,12 @@
 
 
                 <div id="divInputEvenement">
-                    <input id="inputEvenement" type="text">
+                    <input id="inputEvenement" placeholder="Rechercher par sport.." type="text">
                 </div>
 
                 <div id="divButtonEvenement">
-                    <button id="bRechercher">Rechercher</button>
-                    <button id="bActualiserEvenement">Actualiser</button>
+                    <button class="bEvenement" id="bRechercher" >Rechercher</button>
+                    <button style="background-color: #F2EA79;" class="bEvenement" id="bActualiserEvenement">Actualiser</button>
 
                 </div>
 
@@ -60,11 +61,11 @@
 
             </form>
                  </div>
-            </section>
+                </div>
+</section>
+            
 
-             <h1>LISTE DES ÉVENEMENTS</h1>
-
-            <section id="sectionListe">
+            <section style="margin-top: 50px;" id="sectionListe">
                 
 
                 <div>
@@ -80,7 +81,7 @@
                                 <th>Date</th>
                                 <th>Sport</th>
                                 <th>ID Lieu</th>
-                                <th> </th>
+                               
 
 
 

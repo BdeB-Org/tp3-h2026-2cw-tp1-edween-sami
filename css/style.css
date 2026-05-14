@@ -311,6 +311,71 @@ margin-top: 100px;
     font-size: 20px;
 }
 
+#sectionInputEvenement{
 
+    background-color: rgba(0, 0, 0,0.5);
+    height: 400px;
+    width: 1000px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
 
+}
+
+#divFormEvenement{
+
+    background-color:rgba(117, 111, 111, 0.6);
+    height: 325px;
+    width: 920px;
+    margin-top: 35px;
+    border-radius: 30px;
+
+}
+
+#divTexte{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+#divInputEvenement{
+display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+
+#inputEvenement{
+
+    border-radius: 20px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 600px;
+
+}
+
+#divButtonEvenement{
+margin-top: 50px;
+display: flex;
+justify-content: space-around;
+
+}
+
+.bEvenement{
+border-radius: 20px;
+background-color: #225B85;
+color: white;
+height: 40px;
+width: 250px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+}
+
+#container{
+
+    display: flex;
+    justify-content: center;
+}
 
