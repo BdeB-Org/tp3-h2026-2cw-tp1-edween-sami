@@ -75,6 +75,16 @@ async function supprimerEvenement(id) {
 
     try {
         await remove("evenement", id);
+
+         message.textContent = "Evenement supprimé avec succès !";
+
+message.style.color = "orange";
+
+setTimeout(() => {
+
+    message.textContent = "";
+
+}, 3000);
         chargerEvenements();
     } catch (error) {
         alert(error.message);

@@ -50,6 +50,16 @@ async function supprimerClient(id){
 
         await remove('client', id);
 
+        message.textContent = "Client supprimé avec succès !";
+
+message.style.color = "orange";
+
+setTimeout(() => {
+
+    message.textContent = "";
+
+}, 3000);
+
         chargerClients();
 
     } catch (error) {

@@ -73,6 +73,17 @@ async function supprimerCommande(id) {
 
     try {
         await remove("commande", id);
+
+
+     message.textContent = "Commande supprimé avec succès !";
+
+message.style.color = "orange";
+
+setTimeout(() => {
+
+    message.textContent = "";
+
+}, 3000);
         chargerCommandes();
     } catch (error) {
         alert(error.message);
