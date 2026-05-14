@@ -31,7 +31,7 @@ async function chargerEvenements() {
 
     } catch (error) {
 
-       
+       alert("Impossible d'afficher les évenements !");
 
     }
 }
@@ -59,7 +59,7 @@ async function rechercherParId() {
         const evenement = await getById("evenement", id);
         afficherEvenements([evenement]);
     } catch (error) {
-        evenementsBody.innerHTML = `<tr><td colspan="5">Aucun événement trouvé.</td></tr>`;
+        alert("Aucun évenement avec ce ID !");
     }
 }
 
@@ -67,8 +67,11 @@ async function rechercherParId() {
 bRechercher.addEventListener("click",(event) =>{
 
     event.preventDefault();
-   
-    if (!isNaN(inputEvenement.value.trim())) {
+
+    if(inputEvenement.value.trim()===""){
+        chargerEvenements();
+    }
+    else if (!isNaN(inputEvenement.value.trim())) {
         rechercherParId();
     } else {
         rechercherParSport();

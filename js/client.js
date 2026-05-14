@@ -36,9 +36,8 @@ async function chargerClients() {
         `).join('');
 
     } catch (error) {
-
-        clientsBody.innerHTML = `<tr><td colspan="7">${error.message}</td></tr>`;
-
+ alert("Impossible d'afficher les clients !");
+       
     }
 }
 
@@ -64,7 +63,8 @@ setTimeout(() => {
 
     } catch (error) {
 
-        alert(error.message);
+         alert("Impossible de supprimer le client !");
+        
 
     }
     

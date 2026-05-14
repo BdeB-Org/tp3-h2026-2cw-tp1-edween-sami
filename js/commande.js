@@ -28,8 +28,7 @@ async function chargerCommandes() {
 
     } catch (error) {
 
-        commandesBody.innerHTML = `<tr><td colspan="5">${error.message}</td></tr>`;
-
+        alert("Impossible d'afficher les commandes !");
     }
 }
 
@@ -86,7 +85,7 @@ setTimeout(() => {
 }, 3000);
         chargerCommandes();
     } catch (error) {
-        alert(error.message);
+       alert("Impossible de supprimer la commande !");
     }
 }
 
