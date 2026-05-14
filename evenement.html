@@ -35,19 +35,19 @@
 
            
 
-            <div id="formClient">
+            <div id="divFormClient">
 
-            <form>
+            <form id="formEvenement">
 
                 <div class="divInput">
-                <input type="number" class="input" placeholder="ID Evenement..">
-                <input type="text" class="input" placeholder="Nom..">
-                <input  type="date" class="input">
+                <input type="number" class="input" id="idEvenement" placeholder="ID Evenement..">
+                <input type="text" class="input" id="nomEvenement" placeholder="Nom..">
+                <input  type="date" id="dateEvenement" class="input">
                 </div>
 
                 <div class="divInput">
-                <input type="text" class="input" placeholder="Sport..">
-                <input type="number" class="input" placeholder="ID Lieu..">
+                <input type="text" class="input" id="sportEvenement" placeholder="Sport..">
+                <input type="number" class="input" id="idLieu" placeholder="ID Lieu..">
                 </div>
 
                 <div id="divButton">
@@ -83,7 +83,9 @@
                                 <th>Sport</th>
                                 <th>ID Lieu</th>
                                 
-                                <th></th>
+                                <th>
+                                    <button id="bActualiser">Actualiser</button>
+                                </th>
 
 
 

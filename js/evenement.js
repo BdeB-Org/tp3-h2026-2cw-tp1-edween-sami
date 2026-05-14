@@ -1,27 +1,70 @@
 const evenementsBody = document.getElementById("evenement-body");
+const evenementForm = document.getElementById("formEvenement");
+const reload = document.getElementById("bActualiser");
 
 async function chargerEvenements() {
 
-    const evenements = await getAll("evenement");
+    try {
 
-    evenementsBody.innerHTML = "";
+        const evenements = await getAll("evenement");
 
-    evenements.forEach(evenement => {
+        evenementsBody.innerHTML = evenements.map(evenement => `
 
-        evenementsBody.innerHTML += `
-        
-        <tr>
-           
-            <td>${evenement.id_evenement}</td>
-            <td>${evenement.nom}</td>
-            <td>${evenement.date_evenement}</td>
-            <td>${evenement.sport}</td>
-            <td>${evenement.id_lieu}</td> 
+            <tr>
+                <td>${evenement.id_evenement}</td>
+                <td>${evenement.nom}</td>
+                <td>${evenement.date_evenement}</td>
+                <td>${evenement.sport}</td>
+                <td>${evenement.id_lieu}</td>
 
-        </tr>
-        
-        `;
-    });
+                <td>
+                    <button class="bSupprimer" onclick="supprimerEvenement(${evenement.id_evenement})">
+                        Supprimer
+                    </button>
+                </td>
+            </tr>
+
+        `).join('');
+
+    } catch (error) {
+
+        evenementsBody.innerHTML = `<tr><td colspan="6">${error.message}</td></tr>`;
+
+    }
 }
+
+evenementForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const nouvelEvenement = {
+        id_evenement: Number(document.getElementById("idEvenement").value),
+        nom: document.getElementById("nomEvenement").value.trim(),
+        date_evenement: document.getElementById("dateEvenement").value + "T00:00:00Z",
+        sport: document.getElementById("sportEvenement").value.trim(),
+        id_lieu: Number(document.getElementById("idLieu").value)
+    };
+
+    try {
+        await create("evenement", nouvelEvenement);
+        evenementForm.reset();
+        chargerEvenements();
+    } catch (error) {
+        alert(error.message);
+    }
+});
+
+async function supprimerEvenement(id) {
+
+    if (!confirm(`Supprimer l'événement ${id} ?`)) return;
+
+    try {
+        await remove("evenement", id);
+        chargerEvenements();
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
+reload.addEventListener("click", chargerEvenements);
 
 chargerEvenements();
