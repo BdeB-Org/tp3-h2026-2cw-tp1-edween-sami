@@ -1,6 +1,7 @@
 const evenementsBody = document.getElementById("evenement-body");
 const evenementForm = document.getElementById("formEvenement");
 const reload = document.getElementById("bActualiser");
+const message = document.getElementById("message");
 
 async function chargerEvenements() {
 
@@ -13,7 +14,7 @@ async function chargerEvenements() {
             <tr>
                 <td>${evenement.id_evenement}</td>
                 <td>${evenement.nom}</td>
-                <td>${evenement.date_evenement}</td>
+                <td>${evenement.date_evenement.split("T")[0]}</td>
                 <td>${evenement.sport}</td>
                 <td>${evenement.id_lieu}</td>
 
@@ -45,12 +46,27 @@ evenementForm.addEventListener("submit", async (event) => {
     };
 
     try {
-        await create("evenement", nouvelEvenement);
-        evenementForm.reset();
-        chargerEvenements();
-    } catch (error) {
-        alert(error.message);
-    }
+    await create('evenement', nouvelEvenement);
+
+    message.textContent = "Evenement ajouté avec succès !";
+     message.style.color = "yellow";
+
+     setTimeout(() => {
+
+    message.textContent = "";
+
+}, 3000);
+
+    evenementForm.reset();
+
+    chargerEvenements();
+
+} catch (error) {
+
+    message.textContent = "Impossible de ajouter l'evenement !";
+     message.style.color = "red";
+
+}
 });
 
 async function supprimerEvenement(id) {

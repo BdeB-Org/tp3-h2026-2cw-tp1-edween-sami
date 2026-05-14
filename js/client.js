@@ -78,6 +78,12 @@ clientForm.addEventListener('submit', async (event) => {
     message.textContent = "Client ajouté avec succès !";
      message.style.color = "yellow";
 
+     setTimeout(() => {
+
+    message.textContent = "";
+
+}, 3000);
+
     clientForm.reset();
 
     chargerClients();

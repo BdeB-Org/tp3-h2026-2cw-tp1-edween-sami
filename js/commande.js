@@ -13,7 +13,7 @@ async function chargerCommandes() {
 
             <tr>
                 <td>${commande.id_commande}</td>
-                <td>${commande.date_commande}</td>
+                <td>${commande.date_commande.split("T")[0]}</td>
                 <td>${commande.prix_total}</td>
                 <td>${commande.id_client}</td>
 
@@ -49,9 +49,15 @@ commandeForm.addEventListener("submit", async (event) => {
     message.textContent = "Commande ajouté avec succès !";
      message.style.color = "yellow";
 
-    clientForm.reset();
+     setTimeout(() => {
 
-    chargerClients();
+    message.textContent = "";
+
+}, 3000);
+
+    commandeForm.reset();
+
+    chargerCommandes();
 
 } catch (error) {
 
