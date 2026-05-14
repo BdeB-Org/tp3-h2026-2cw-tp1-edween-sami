@@ -1,6 +1,7 @@
 const commandesBody = document.getElementById("commande-body");
 const commandeForm = document.getElementById("formCommande");
 const reload = document.getElementById("bActualiser");
+const message = document.getElementById("message");
 
 async function chargerCommandes() {
 
@@ -43,12 +44,21 @@ commandeForm.addEventListener("submit", async (event) => {
     };
 
     try {
-        await create("commande", nouvelleCommande);
-        commandeForm.reset();
-        chargerCommandes();
-    } catch (error) {
-        alert(error.message);
-    }
+    await create('commande', nouvelleCommande);
+
+    message.textContent = "Commande ajouté avec succès !";
+     message.style.color = "yellow";
+
+    clientForm.reset();
+
+    chargerClients();
+
+} catch (error) {
+
+    message.textContent = "Impossible de ajouter la commande !";
+     message.style.color = "red";
+
+}
 });
 
 async function supprimerCommande(id) {
