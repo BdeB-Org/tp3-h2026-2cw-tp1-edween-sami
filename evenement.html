@@ -30,34 +30,32 @@
         </div>
 
 
-        <H1>AJOUTER DES EVENEMENTS</H1>
-            <section id="sectionInputClient">
+        <H1>RECHERCHER DES ÉVENEMENTS</H1>
+            <section id="sectionInputEvenement">
 
            
 
-            <div id="divFormClient">
+            <div id="divFormEvenement">
 
             <form id="formEvenement">
 
-                <div class="divInput">
-                <input type="number" class="input" id="idEvenement" placeholder="ID Évenement..">
-                <input type="text" class="input" id="nomEvenement" placeholder="Nom..">
-                <input  type="date" id="dateEvenement" class="input">
+               <div id="divTexte">
+                <h2>CHERCHER DES ÉVENEMENTS PAR SPORT</h2>
+               </div>
+
+
+                <div id="divInputEvenement">
+                    <input id="inputEvenement" type="text">
                 </div>
 
-                <div class="divInput">
-                <input type="text" class="input" id="sportEvenement" placeholder="Sport..">
-                <input type="number" class="input" id="idLieu" placeholder="ID Lieu..">
+                <div id="divButtonEvenement">
+                    <button id="bRechercher">Rechercher</button>
+                    <button id="bActualiserEvenement">Actualiser</button>
+
                 </div>
 
-                <div id="divButton">
-                 <button type="submit" id="bSummit">Ajouter</button>
-                 </div>
 
-                 <div id="messageInput">
-
-                <p id="message" style="text-align: center;"></p>
-              </div>
+               
             
 
             </form>
@@ -82,10 +80,7 @@
                                 <th>Date</th>
                                 <th>Sport</th>
                                 <th>ID Lieu</th>
-                                
-                                <th>
-                                    <button id="bActualiser">Actualiser</button>
-                                </th>
+                                <th> </th>
 
 
 

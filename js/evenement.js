@@ -1,6 +1,6 @@
 const evenementsBody = document.getElementById("evenement-body");
 const evenementForm = document.getElementById("formEvenement");
-const reload = document.getElementById("bActualiser");
+const reload = document.getElementById("bActualiserEvenement");
 const message = document.getElementById("message");
 
 async function chargerEvenements() {
@@ -34,62 +34,9 @@ async function chargerEvenements() {
     }
 }
 
-evenementForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
 
-    const nouvelEvenement = {
-        id_evenement: Number(document.getElementById("idEvenement").value),
-        nom: document.getElementById("nomEvenement").value.trim(),
-        date_evenement: document.getElementById("dateEvenement").value + "T00:00:00Z",
-        sport: document.getElementById("sportEvenement").value.trim(),
-        id_lieu: Number(document.getElementById("idLieu").value)
-    };
 
-    try {
-    await create('evenement', nouvelEvenement);
 
-    message.textContent = "Evenement ajouté avec succès !";
-     message.style.color = "yellow";
-
-     setTimeout(() => {
-
-    message.textContent = "";
-
-}, 3000);
-
-    evenementForm.reset();
-
-    chargerEvenements();
-
-} catch (error) {
-
-    message.textContent = "Impossible de ajouter l'evenement !";
-     message.style.color = "red";
-
-}
-});
-
-async function supprimerEvenement(id) {
-
-    if (!confirm(`Supprimer l'événement ${id} ?`)) return;
-
-    try {
-        await remove("evenement", id);
-
-         message.textContent = "Evenement supprimé avec succès !";
-
-message.style.color = "orange";
-
-setTimeout(() => {
-
-    message.textContent = "";
-
-}, 3000);
-        chargerEvenements();
-    } catch (error) {
-        alert(error.message);
-    }
-}
 
 reload.addEventListener("click", chargerEvenements);
 
