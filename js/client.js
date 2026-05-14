@@ -1,6 +1,8 @@
 const clientsBody = document.getElementById("clients-body");
 const clientForm = document.getElementById("formClient");
 const reload = document.getElementById("bActualiser");
+const message = document.getElementById("message");
+
 
 async function chargerClients() {
 
@@ -70,17 +72,33 @@ clientForm.addEventListener('submit', async (event) => {
         mdp: document.getElementById('mdpClient').value.trim()
     };
 
-    try {
-        await create('client', nouveauClient);
-        clientForm.reset();
-        chargerClients();
-    } catch (error) {
-        alert(error.message);
-    }
+  try {
+    await create('client', nouveauClient);
+
+    message.textContent = "Client ajouté avec succès !";
+     message.style.color = "yellow";
+
+    clientForm.reset();
+
+    chargerClients();
+
+} catch (error) {
+
+    message.textContent = "Impossible de ajouter le client !";
+     message.style.color = "red";
+
+}
 });
+
+
+
 
 
 
 reload.addEventListener('click', chargerClients);
 
 chargerClients();
+
+
+
+
