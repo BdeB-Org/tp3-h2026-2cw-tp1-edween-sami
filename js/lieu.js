@@ -1,72 +1,59 @@
-const billetsBody = document.getElementById("Billet-body");
-const inputEvenement = document.getElementById("inputEvenement");
+const lieuxBody = document.getElementById("Billet-body");
+const inputLieu = document.getElementById("inputEvenement");
 const bRechercher = document.getElementById("bRechercher");
 const reload = document.getElementById("bActualiserEvenement");
 
+let tousLesLieux = [];
 
-let tousLesBillets = [];
-
-function afficherBillets(billets){
-
-    billetsBody.innerHTML = billets.map(billet => `
-        
+function afficherLieux(lieux) {
+    lieuxBody.innerHTML = lieux.map(lieu => `
         <tr>
-            <td>${billet.id_billet}</td>
-            <td>${billet.type}</td>
-            <td>${billet.prix}</td>
-            <td>${billet.id_evenement}</td>
+            <td>${lieu.id_lieu}</td>
+            <td>${lieu.nom}</td>
+            <td>${lieu.pays}</td>
+            <td>${lieu.ville}</td>
+            <td>${lieu.address}</td>
+            <td>${lieu.capacite}</td>
         </tr>
-
     `).join('');
 }
 
-
-
-async function chargerBillets() {
-
+async function chargerLieux() {
     try {
-
-      tousLesBillets = await getAll("billet");
-      afficherBillets(tousLesBillets);
-
+        tousLesLieux = await getAll("lieu");
+        afficherLieux(tousLesLieux);
     } catch (error) {
-
-       alert("Impossible d'afficher les billets !");
-
+        alert("Impossible d'afficher les lieux !");
+        console.error(error);
     }
 }
 
 async function rechercherParId() {
-    const id = inputEvenement.value.trim();
+    const id = inputLieu.value.trim();
 
     if (id === "") {
-        chargerBillets();
+        chargerLieux();
         return;
     }
 
     try {
-        const billet = await getById("billet", id);
-        afficherBillets([billet]);
+        const lieu = await getById("lieu", id);
+        afficherLieux([lieu]);
     } catch (error) {
-        alert("Aucun billet avec ce ID !");
+        alert("Aucun lieu avec ce ID !");
+        console.error(error);
     }
 }
 
-
-bRechercher.addEventListener("click",(event) =>{
-event.preventDefault();
-rechercherParId();
-
+bRechercher.addEventListener("click", (event) => {
+    event.preventDefault();
+    rechercherParId();
 });
 
 reload.addEventListener("click", (event) => {
     event.preventDefault();
-    inputEvenement.value = "";
-    chargerBillets();
+    inputLieu.value = "";
+    chargerLieux();
 });
 
-
-
-
-
-chargerBillets();
+chargerLieux();
