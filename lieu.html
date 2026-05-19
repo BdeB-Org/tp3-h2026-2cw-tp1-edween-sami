@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="bMenu" onclick="toggleMenu()"><img style="margin-left: 20px;" class="iconesHeader" src="./images/troisLignes.png" alt="icone menu"></div>
+         <div><a href="./index.html"><img id="photoLogo" src="./images/logo.png" alt="logo du site"></a></div>
+
+          <div style="margin-right: 20px;" id="divHeader">
+            <div> <img class="iconesHeader" src="./images/favoris.png" alt="icones favoris"></div>
+            <div><img class="iconesHeader" src="./images/calendrier.png" alt="icone calendrier"></div>
+            <div><img class="iconesHeader" src="./images/compte.png" alt="icone compte"></div>
+        </div>
+    </header>
+    <main>
+        <div style="display: flex; justify-content: right;">
+         <div id="divBarre" >
+            <a  href="./client.html"><button class="bBarre">CLIENTS</button></a>
+            <a href="./commande.html"><button  class="bBarre">COMMANDES</button></a>
+            <a href="./evenement.html"><button class="bBarre">ÉVENEMENTS</button></a>
+ 		<a  href="./billet.html"><button class="bBarre">BILLETS</button></a>
+        <a  href="./lieu.html"><button style="background-color: #D4CFCD;" class="bBarre">LIEUX</button></a>
+ 		
+
+
+        </div>
+        </div>
+        <h1>LISTE DES LIEUX</h1>
+        <section id="container">
+            <div id="sectionInputLieu">
+
+           
+
+            <div id="divFormEvenement">
+
+            <form id="formBillet">
+
+               <div id="divTexte">
+                <h2>CHERCHER DES LIEUX PAR ID</h2>
+               </div>
+
+
+                <div id="divInputEvenement">
+                    <input id="inputEvenement" placeholder="Rechercher par ID.." type="text">
+                </div>
+
+                <div id="divButtonEvenement">
+                    <button class="bEvenement" id="bRechercher" >Rechercher</button>
+                    <button style="background-color: #F2EA79;" class="bEvenement" id="bActualiserEvenement">Actualiser</button>
+
+                </div>
+
+
+               
+            
+
+            </form>
+                 </div>
+                </div>
+</section>
+<section style="margin-top: 50px;" id="sectionListe">
+                
+
+                <div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+                                <th>NOM</th>
+                                <th>PAYS</th>
+                                <th>VILLE</th>
+                                <th>ADDRESS</th>
+                                <th>CAPACITE</th>
+                               
+
+
+
+
+                            </tr>
+
+
+
+                        </thead>
+
+                        <tbody id="Billet-body">      </tbody>
+
+
+                    </table>
+
+                </div>
+            </section>
+    </main>
+    <footer>
+
+         <div class="divFooter">
+            <h2>Service Client</h2>
+            <p>Contactez-nous <br><br>
+            Garanties <br><br>
+        Politiques</p>
+        </div>
+
+        
+        <div class="divFooter"><h2>SPORT IX</h2>
+        <p>Acheter billets <br><br>
+        Mes billets <br><br>
+    Connectez-vous</p></div>
+
+    <div class="divFooter"><h2>Notre Info</h2>
+        <p>7285, Route Métropolitaine Ouest, <br>
+        Saint-Laurent, QC, H4T 2K9 <br><br>
+    Contact@sportix.com</p></div>
+
+     <div class="divFooter"> <a href="./index.html"><img id="photoFooter" src="./images/photoFooter.png" alt="photo logo dans footer"></a></div>
+        
+    </footer>
+    <div class="menu" id="menu">
+
+        <div id="fermerMenu" onclick="toggleMenu()">
+
+        <img id="iconeFermer" src="./images/close.png" alt="">
+    </div>
+
+    <a href="./client.html">◆ Client</a>
+    <a href="./commande.html">◆ Commandes</a>
+    <a href="./evenement.html">◆ Évenement</a>
+	<a href="./billet.html">◆ Billets</a>
+	<a href="./lieu.html">◆ Lieu</a>
+
+
+</div>
+</body>
+</html>
