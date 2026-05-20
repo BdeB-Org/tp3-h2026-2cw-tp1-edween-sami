@@ -32,42 +32,41 @@
         </div>
         <h1>LISTE DES LIEUX</h1>
         <section id="container">
-            <div id="sectionInputLieu">
-
+            <div id="sectionInputEvenement" style="height: 520px;">
            
 
-            <div id="divFormEvenement">
-
+            <div id="divFormEvenement" style="height: 430px;">
             <form id="formBillet">
 
-               <div id="divTexte">
-                <h2>CHERCHER DES LIEUX PAR ID</h2>
-               </div>
+    <div id="divTexte">
+        <h2>AJOUTER DES LIEUX</h2>
+    </div>
 
-
-                <div id="divInputEvenement">
-                    <input id="inputEvenement" placeholder="Rechercher par ID.." type="text">
-                    <div id="divInputEvenement">
-                    <input id="nom" placeholder="Nom" type="text">
-                    <input id="pays" placeholder="Pays" type="text">
-                    <input id="ville" placeholder="Ville" type="text">
-                    <input id="address" placeholder="Adresse" type="text">
-                    <input id="capacite" placeholder="Capacité" type="number">
+    <div class="divInput">
+    <input class="input" id="id_lieu" placeholder="ID Lieu.." type="number">
+    <input class="input" id="nom" placeholder="Nom.." type="text">
 </div>
-                </div>
 
-                <div id="divButtonEvenement">
-                    <button class="bEvenement" id="bRechercher" >Rechercher</button>
-                    <button style="background-color: #F2EA79;" class="bEvenement" id="bActualiserEvenement">Actualiser</button>
-                    <button style="background-color: #F2EA79;" class="bEvenement" id="bAjouter">Ajouter</button>
+<div class="divInput">
+    <input class="input" id="pays" placeholder="Pays.." type="text">
+    <input class="input" id="ville" placeholder="Ville.." type="text">
+</div>
 
-                </div>
+<div class="divInput">
+    <input class="input" id="address" placeholder="Adresse.." type="text">
+    <input class="input" id="capacite" placeholder="Capacité.." type="number">
+</div>
 
+<div class="divInput" style="margin-top: 30px;">
+    <input class="input" id="inputEvenement" placeholder="Rechercher par ID.." type="text" style="width: 700px;">
+</div>
 
-               
-            
+        <div id="divButtonEvenement" style="margin-top: 30px;">        <button class="bEvenement" id="bRechercher">Rechercher</button>
+        <button style="background-color: #F2EA79;" class="bEvenement" id="bActualiserEvenement">Actualiser</button>
+        <button style="background-color: #F2EA79;" class="bEvenement" id="bAjouter">Ajouter</button>
+    </div>
 
-            </form>
+</form>
                  </div>
                 </div>
 </section>

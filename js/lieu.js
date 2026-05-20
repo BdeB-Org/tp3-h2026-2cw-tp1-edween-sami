@@ -9,6 +9,7 @@ const pays = document.getElementById("pays");
 const ville = document.getElementById("ville");
 const address = document.getElementById("address");
 const capacite = document.getElementById("capacite");
+const idLieu = document.getElementById("id_lieu");
 
 let tousLesLieux = [];
 
@@ -53,15 +54,16 @@ async function rechercherParId() {
 }
 async function ajouterLieu() {
 
-    const nouveauLieu = {
+   const nouveauLieu = {
 
-        nom: nom.value,
-        pays: pays.value,
-        ville: ville.value,
-        address: address.value,
-        capacite: parseInt(capacite.value)
+    id_lieu: parseInt(idLieu.value),
+    nom: nom.value,
+    pays: pays.value,
+    ville: ville.value,
+    address: address.value,
+    capacite: parseInt(capacite.value)
 
-    };
+};
 
     try {
 
@@ -69,6 +71,7 @@ async function ajouterLieu() {
 
         alert("Lieu ajouté !");
 
+        idLieu.value = "";
         nom.value = "";
         pays.value = "";
         ville.value = "";
