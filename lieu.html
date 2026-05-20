@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Lieu</title>
+     <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 <body>
     <header>
@@ -32,34 +35,41 @@
         </div>
         <h1>LISTE DES LIEUX</h1>
         <section id="container">
-            <div id="sectionInputLieu">
-
+            <div id="sectionInputEvenement" style="height: 520px;">
            
 
-            <div id="divFormEvenement">
-
+            <div id="divFormEvenement" style="height: 430px;">
             <form id="formBillet">
 
-               <div id="divTexte">
-                <h2>CHERCHER DES LIEUX PAR ID</h2>
-               </div>
+    <div id="divTexte">
+        <h2>AJOUTER DES LIEUX</h2>
+    </div>
 
+    <div class="divInput">
+    <input class="input" id="id_lieu" placeholder="ID Lieu.." type="number">
+    <input class="input" id="nom" placeholder="Nom.." type="text">
+</div>
 
-                <div id="divInputEvenement">
-                    <input id="inputEvenement" placeholder="Rechercher par ID.." type="text">
-                </div>
+<div class="divInput">
+    <input class="input" id="pays" placeholder="Pays.." type="text">
+    <input class="input" id="ville" placeholder="Ville.." type="text">
+</div>
 
-                <div id="divButtonEvenement">
-                    <button class="bEvenement" id="bRechercher" >Rechercher</button>
-                    <button style="background-color: #F2EA79;" class="bEvenement" id="bActualiserEvenement">Actualiser</button>
+<div class="divInput">
+    <input class="input" id="address" placeholder="Adresse.." type="text">
+    <input class="input" id="capacite" placeholder="Capacité.." type="number">
+</div>
 
-                </div>
+<div class="divInput" style="margin-top: 30px;">
+    <input class="input" id="inputEvenement" placeholder="Rechercher par ID.." type="text" style="width: 700px;">
+</div>
 
+        <div id="divButtonEvenement" style="margin-top: 30px;">        <button class="bEvenement" id="bRechercher">Rechercher</button>
+        <button style="background-color: #F2EA79;" class="bEvenement" id="bActualiserEvenement">Actualiser</button>
+        <button style="background-color: #F2EA79;" class="bEvenement" id="bAjouter">Ajouter</button>
+    </div>
 
-               
-            
-
-            </form>
+</form>
                  </div>
                 </div>
 </section>
@@ -137,5 +147,7 @@
 
 
 </div>
+<script src="./js/api.js"></script>
+<script src="./js/lieu.js"></script>
 </body>
 </html>
