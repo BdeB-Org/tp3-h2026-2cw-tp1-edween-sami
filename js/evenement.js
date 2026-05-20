@@ -24,6 +24,12 @@ function afficherEvenements(evenements){
 
 async function chargerEvenements() {
 
+     evenementsBody.innerHTML = `
+    <tr>
+        <td colspan="7">Chargement...</td>
+    </tr>
+    `;
+
     try {
 
       tousLesEvenements = await getAll("evenement");

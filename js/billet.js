@@ -24,6 +24,12 @@ function afficherBillets(billets){
 
 async function chargerBillets() {
 
+    billetsBody.innerHTML = `
+    <tr>
+        <td colspan="7">Chargement...</td>
+    </tr>
+    `;
+
     try {
 
       tousLesBillets = await getAll("billet");

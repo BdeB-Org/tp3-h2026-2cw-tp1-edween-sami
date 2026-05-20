@@ -5,6 +5,12 @@ const message = document.getElementById("message");
 
 async function chargerCommandes() {
 
+     commandesBody.innerHTML = `
+    <tr>
+        <td colspan="7">Chargement...</td>
+    </tr>
+    `;
+
     try {
 
         const commandes = await getAll("commande");

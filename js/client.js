@@ -6,6 +6,11 @@ const message = document.getElementById("message");
 
 async function chargerClients() {
 
+     clientsBody.innerHTML = `
+    <tr>
+        <td colspan="7">Chargement...</td>
+    </tr>
+    `;
    
 
     try {

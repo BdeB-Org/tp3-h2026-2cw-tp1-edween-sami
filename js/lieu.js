@@ -1,4 +1,4 @@
-const lieuxBody = document.getElementById("Billet-body");
+const lieuxBody = document.getElementById("lieux-body");
 const inputLieu = document.getElementById("inputEvenement");
 const bRechercher = document.getElementById("bRechercher");
 const reload = document.getElementById("bActualiserEvenement");
@@ -22,17 +22,31 @@ function afficherLieux(lieux) {
             <td>${lieu.ville}</td>
             <td>${lieu.address}</td>
             <td>${lieu.capacite}</td>
+            
+            <td>
+                    <button class="bSupprimer" onclick="supprimerLieu(${lieu.id_lieu})">
+                        Supprimer
+                    </button>
+                </td>
+            
         </tr>
     `).join('');
 }
 
 async function chargerLieux() {
+
+     lieuxBody.innerHTML = `
+    <tr>
+        <td colspan="7">Chargement...</td>
+    </tr>
+    `;
+
     try {
         tousLesLieux = await getAll("lieu");
         afficherLieux(tousLesLieux);
     } catch (error) {
         alert("Impossible d'afficher les lieux !");
-        console.error(error);
+        
     }
 }
 
@@ -85,6 +99,20 @@ async function ajouterLieu() {
         alert("Erreur lors de l'ajout !");
         console.error(error);
 
+    }
+}
+
+
+async function supprimerLieu(id) {
+
+    if (!confirm(`Supprimer le lieu ${id} ?`)) return;
+
+    try {
+        await remove("lieu", id);
+
+        chargerLieux();
+    } catch (error) {
+       alert("Impossible de supprimer le lieu !");
     }
 }
 
