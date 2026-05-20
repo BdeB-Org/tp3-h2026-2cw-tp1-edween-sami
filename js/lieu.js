@@ -2,6 +2,13 @@ const lieuxBody = document.getElementById("Billet-body");
 const inputLieu = document.getElementById("inputEvenement");
 const bRechercher = document.getElementById("bRechercher");
 const reload = document.getElementById("bActualiserEvenement");
+const bAjouter = document.getElementById("bAjouter");
+
+const nom = document.getElementById("nom");
+const pays = document.getElementById("pays");
+const ville = document.getElementById("ville");
+const address = document.getElementById("address");
+const capacite = document.getElementById("capacite");
 
 let tousLesLieux = [];
 
@@ -44,6 +51,46 @@ async function rechercherParId() {
         console.error(error);
     }
 }
+async function ajouterLieu() {
+
+    const nouveauLieu = {
+
+        nom: nom.value,
+        pays: pays.value,
+        ville: ville.value,
+        address: address.value,
+        capacite: parseInt(capacite.value)
+
+    };
+
+    try {
+
+        await create("lieu", nouveauLieu);
+
+        alert("Lieu ajouté !");
+
+        nom.value = "";
+        pays.value = "";
+        ville.value = "";
+        address.value = "";
+        capacite.value = "";
+
+        chargerLieux();
+
+    } catch(error) {
+
+        alert("Erreur lors de l'ajout !");
+        console.error(error);
+
+    }
+}
+
+bAjouter.addEventListener("click", (event)=>{
+
+    event.preventDefault();
+    ajouterLieu();
+
+});
 
 bRechercher.addEventListener("click", (event) => {
     event.preventDefault();
