@@ -26,7 +26,7 @@ async function chargerBillets() {
 
     billetsBody.innerHTML = `
     <tr>
-        <td colspan="7">Chargement...</td>
+        <td colspan="4">Chargement...</td>
     </tr>
     `;
 

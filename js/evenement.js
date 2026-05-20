@@ -26,7 +26,7 @@ async function chargerEvenements() {
 
      evenementsBody.innerHTML = `
     <tr>
-        <td colspan="7">Chargement...</td>
+        <td colspan="5">Chargement...</td>
     </tr>
     `;
 
